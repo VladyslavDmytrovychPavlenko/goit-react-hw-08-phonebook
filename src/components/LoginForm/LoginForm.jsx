@@ -24,7 +24,6 @@ export const LoginForm = () => {
       <form className={css.form} onSubmit={handleSubmit}>
         <label className={css.label}>
           <TextField
-            // id="outlined-name"
             type="email"
             name="email"
             label="Email"
