@@ -114,7 +114,6 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     await axios.post('/users/logout');
     clearAuthHeader();
   } catch (error) {
-    console.log(error);
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -132,7 +131,6 @@ export const current = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
     const response = await axios.get('/users/current');
     return response.data;
   } catch (error) {
-    console.log(error);
     return thunkAPI.rejectWithValue(error.message);
   }
 });
