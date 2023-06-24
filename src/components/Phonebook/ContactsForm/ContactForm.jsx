@@ -7,7 +7,7 @@ import style from './ContactForm.module.css';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setNumber] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
@@ -23,8 +23,8 @@ const ContactForm = () => {
       return alert(`${name} is already in contacts.`);
     }
 
-    if (name && phone) {
-      dispatch(addContact({ name, phone }));
+    if (name && number) {
+      dispatch(addContact({ name, number }));
       resetForm();
     }
   };
@@ -54,7 +54,7 @@ const ContactForm = () => {
         className={style.input}
         placeholder="Add a number"
         pattern="[0-9+\-()\s]+"
-        value={phone}
+        value={number}
         onChange={event => {
           const sanitizedValue = event.target.value.replace(
             /[^0-9+\-()\s]/g,
